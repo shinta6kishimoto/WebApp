@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+import dto.User;
 import model.LoginLogic;
-import model.User;
 
 /**
  * Servlet implementation class Login
@@ -37,13 +37,12 @@ public class Login extends HttpServlet {
 		//リクエストパラメータ取得
 		String name = request.getParameter("name");
 		String pass = request.getParameter("pass");
-		User user = new User(name, pass);
 		//ログイン処理
 		LoginLogic loginLogic = new LoginLogic();
-		boolean isLogin = loginLogic.execute(user);
+		User user = loginLogic.execute(name, pass);
 
 		//ログイン成功時
-		if (isLogin) {
+		if (user != null) {
 			//ユーザー情報をセッションスコープ
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", user);

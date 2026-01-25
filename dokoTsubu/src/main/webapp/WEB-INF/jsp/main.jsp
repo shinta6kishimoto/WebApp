@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="model.User,model.Mutter,java.util.List,model.ErrorMsg" %>
+<%@ page import="dto.User,model.Mutter,java.util.List,model.ErrorMsg" %>
 <%
 //セッションスコープからユーザー情報を取得
 User loginUser = (User)session.getAttribute("loginUser");

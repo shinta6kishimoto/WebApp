@@ -1,8 +1,10 @@
-package model;
+package dto;
 
 import java.io.Serializable;
 
 public class User implements Serializable {
+	//	id
+	private Integer id;
 	//	ユーザー名
 	private String name;
 	//	パスワード
@@ -11,9 +13,14 @@ public class User implements Serializable {
 	public User() {
 	}
 
-	public User(String name, String pass) {
+	public User(Integer id, String name, String pass) {
+		this.id = id;
 		this.name = name;
 		this.pass = pass;
+	}
+
+	public Integer getId() {
+		return id;
 	}
 
 	public String getName() {

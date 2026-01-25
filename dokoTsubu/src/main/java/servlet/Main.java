@@ -15,10 +15,10 @@ import jakarta.servlet.http.HttpSession;
 
 import org.apache.commons.collections4.CollectionUtils;
 
+import dto.User;
 import model.ErrorMsg;
 import model.Mutter;
 import model.PostMutterLogic;
-import model.User;
 
 /**
  * Servlet implementation class Main
